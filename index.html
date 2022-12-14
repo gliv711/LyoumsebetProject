@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<title> jé el weekend ?</title>
+<link rel="stylesheet" href="css/styles.css"> 
+</head>
+
+<body>
+    <div style="text-align: center;">
+
+<h1>
+    jé el weekend ?
+</h1>
+
+<br>
+<h1 id="pa"></h1>
+
+
+<img id="image" src="" >
+<h1 id="ka"></h1>
+<script>
+
+function isSaturday(date = new Date()) {
+  return date.getDay() === 6;
+}
+
+
+
+    var date = new Date();
+    var today = date.getDay();
+    var days_left = 5 - today ;
+    console.log(days_left);
+
+    if(isSaturday(date) == today){
+        document.getElementById("pa").innerText= "Yes";
+    }
+    else{
+        document.getElementById("pa").innerText="No";
+        switch (days_left) {
+        case 1:
+        document.getElementById("ka").innerText="Rodwa Yebda el weekend ";
+        document.getElementById("image").src="/ressources/1_jours.gif";
+        break;
+        case 2:
+        document.getElementById("ka").innerText="Only 2 days left";
+        document.getElementById("image").src="/ressources/2_jours.gif";
+
+        break;
+        case 3:
+        document.getElementById("ka").innerText="مزال اربعاء و خميس و جمعة";
+        document.getElementById("image").src="/ressources/4_jours.gif";
+        break;
+        case 4:
+        document.getElementById("ka").innerText="مزال خميس و جمعة";
+        document.getElementById("image").src="/ressources/4_jours.gif";
+        break;
+        case 5:
+        document.getElementById("ka").innerText="مزال جمعة";
+        document.getElementById("image").src="/ressources/5_jours.gif";
+        break;
+        case 6:
+        document.getElementById("ka").innerText="Direction gammart";
+        document.getElementById("image").src="/ressources/gammart.gif";
+
+        break;
+        case 7:
+        document.getElementById("ka").innerText="ارتاح";
+        document.getElementById("image").src="/ressources/dimanche.gif";
+        break;
+        default:         document.getElementById("ka").innerText="error";
+        break;
+        }
+    }
+</script>
+</div>
+</body>
+
+
+</html>
